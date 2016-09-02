@@ -1,0 +1,22 @@
+{
+  "name": "HDC_API",
+  "description": "Web service for hdc.",
+  "main": "",
+  "authors": [
+    "ictMOPH"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "^0.3.1"
+  }
+}
