@@ -1,11 +1,20 @@
-angular.module('exam', ['ui.router', 'exam.controller.Main'])
+angular.module('example', 
+	['ui.router', 
+	'ngMaterial', 
+	'example.controller.Main'])
 	.config(function($stateProvider, $urlRouterProvider){
 		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
-			.starte('main', {
+			.state('main', {
 				url: '/', 
         		templateUrl: '/views/main.html', 
         		controller: 'MainController'
 			})
+			.state('example', {
+				url: '/example', 
+        		templateUrl: '/views/example.html', 
+        		controller: 'ExampleController'
+			})
+
 	})
