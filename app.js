@@ -23,18 +23,9 @@ var anc = require('./routes/ancController');
 var specialpp = require('./routes/specialppController');
 var community_service = require('./routes/community_serviceController');
 
-var app = express();
+var db = require('./database');
 
-var db = require('knex')({
-  client: 'mysql',
-  connection: {
-    host: '203.157.103.38',
-    port: 3306,
-    database: 'hdc',
-    user: 'nar009',
-    password: '123456'
-  }
-});
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

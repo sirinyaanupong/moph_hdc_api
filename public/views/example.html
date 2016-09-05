@@ -1,3 +1,52 @@
-- getAncByCid
-- getEpiByCid
-- getPersonByCid
+<div ng-controller="ExampleController" layout="column" style="height:500px;" ng-cloak>
+  <!-- <md-content> -->
+
+    <br>
+
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon class="md-menu-align-target"><i class="material-icons">view_headline</i></md-icon>
+        </md-button>
+        <h2>
+          <span>Toolbar with Disabled/Enabled Icon Buttons</span>
+        </h2>
+        <span flex></span>
+      </div>
+    </md-toolbar>
+
+  <!-- </md-content> -->
+
+  <section layout="row" flex>
+
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-whiteframe="4">
+
+      <md-toolbar class="md-theme-indigo">
+        <md-button class="md-toolbar-tools">Person</md-button>
+        <md-button class="md-toolbar-tools">Address</md-button>
+      </md-toolbar>
+
+    </md-sidenav>
+
+    <md-content flex layout-padding>
+
+      <div layout="column" layout-align="top center">
+        <p>
+        The left sidenav will 'lock open' on a medium (>=960px wide) device.
+        </p>
+        <p>
+        The right sidenav will focus on a specific child element.
+        </p>
+      </div>
+
+      <div flex></div>
+
+    </md-content>
+
+  </section>
+
+</div>
