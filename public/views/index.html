@@ -1,0 +1,44 @@
+<div layout="column" style="height: 100%">
+  <section layout="row" flex="flex" style="height: 100%">
+    <div ng-controller="SideNavCtrl" style="height: 100%">
+      <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop="" class="md-sidenav-left">
+        <md-toolbar class="md-hue-2 md-whiteframe-z1">
+          <div class="md-toolbar-tools">
+            <md-button aria-label="Main" ng-click="toggleLeft()" ui-sref="main" class="md-icon-button">
+              <md-icon class="material-icons">desktop_windows</md-icon>
+            </md-button>
+            <h2><span>HDC API</span></h2>
+          </div>
+        </md-toolbar>
+        <md-content>
+          <md-subheader>Main Menu
+            <md-menu-content>
+              <md-menu-item>
+                <md-button ui-sref="person">
+                  <md-icon md-menu-align-target="md-menu-align-target"><i class="material-icons">person</i></md-icon>Person
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-subheader>
+         
+          <md-divider></md-divider>
+        </md-content>
+      </md-sidenav>
+    </div>
+    <md-content layout="column" layout-fill="layout-fill" layout-align="top center" style="background-color: #e9ebee;">
+      <div layout="column" layout-fill="layout-fill" ng-controller="ToolbarCtrl">
+        <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+            <md-button aria-label="Toggle" ng-click="toggleLeft()" hide-gt-sm="hide-gt-sm" class="md-icon-button">
+              <md-icon class="material-icons">menu</md-icon>
+            </md-button>
+            <h2>Example of HDC API</h2>
+          </div>
+        </md-toolbar>
+        <div>
+          <ui-view></ui-view>
+        </div>
+      </div>
+    </md-content>
+  </section>
+</div>

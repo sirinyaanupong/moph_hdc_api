@@ -1,0 +1,46 @@
+<md-toolbar class="md-hue-2">
+  <div class="md-toolbar-tools"><i class="material-icons">group</i>
+    <h2>&nbsp; Person</h2><span flex="flex"></span>
+  </div>
+</md-toolbar>
+
+<md-progress-linear md-mode="indeterminate" ng-show="showLoading"></md-progress-linear>
+
+<md-content layout-padding>
+  <div flex="100">
+      <form name="frmGetPersonByCid">
+      <md-card md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">getPersonByCid</span>
+            <span class="md-subhead">Enter Cid</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <div layout="column">
+            <div flex>
+              <md-input-container class="md-block">
+                <label>Cid</label>
+                <input ng-model="cid" ng-required="true">
+              </md-input-container>
+            </div>
+          </div>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="center">
+          <md-button class="md-raised md-primary" ng-click="getPersonByCid(cid)" ng-disabled="frmGetPersonByCid.$invalid">Send
+          </md-button>
+        </md-card-actions>
+        <md-card-content>
+          <div layout="column">
+            <div flex>
+              <md-input-container class="md-block">
+                <label>Response</label>
+                <textarea ng-model="response" ng-readonly="checked" md-select-on-focus></textarea>
+              </md-input-container>
+            </div>
+          </div>
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+</md-content>
