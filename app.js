@@ -23,16 +23,36 @@ var anc = require('./routes/ancController');
 var specialpp = require('./routes/specialppController');
 var community_service = require('./routes/community_serviceController');
 
+var nmpcd_mapping = require('./routes/nmpcd_mapping');
+var moph_mcd = require('./routes/moph-mcd');
+
 var app = express();
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+// var db = require('knex')({
+//   client: 'mysql',
+//   connection: {
+//     host: '203.157.103.38',
+//     port: 3306,
+//     database: 'hdc',
+//     user: 'nar009',
+//     password: '123456'
+//   }
+// });
 
 var db = require('knex')({
   client: 'mysql',
   connection: {
-    host: '203.157.103.38',
+    host: '127.0.0.1',
     port: 3306,
-    database: 'hdc',
-    user: 'nar009',
-    password: '123456'
+    database: 'moph-mcd',
+    user: 'root',
+    password: 'root'
   }
 });
 
@@ -69,6 +89,9 @@ app.use('/prenatal', prenatal);
 app.use('/anc', anc);
 app.use('/specialpp', specialpp);
 app.use('/community_service', community_service);
+
+app.use('/api/nmpcd', nmpcd_mapping);
+app.use('/api/mcd', moph_mcd);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
