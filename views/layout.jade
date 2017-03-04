@@ -1,7 +1,27 @@
 doctype html
-html
+html(lang="en")
   head
     title= title
+
+    meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+    link(rel="stylesheet", href="/assets/angular-material/angular-material.min.css")
+    link(rel="stylesheet", href="/stylesheets/iconfont/material-icons.css")
+
+    script(src='/assets/angular/angular.min.js')
+    script(src="/assets/angular-animate/angular-animate.min.js")
+    script(src="/assets/angular-aria/angular-aria.min.js")
+    script(src="/assets/angular-messages/angular-messages.min.js")
+    script(src="/assets/angular-material/angular-material.min.js")
+
+    script(src='/assets/angular-ui-router/release/angular-ui-router.js')
+
+    script(src='/javascripts/router.js')
+    script(src="/javascripts/controllers/mainController.js")
+    script(src="/javascripts/controllers/main.js")
+    script(src="/javascripts/controllers/sidenav.js")
+    script(src="/javascripts/controllers/toolbar.js")
+    script(src="/javascripts/controllers/personController.js")
+    script(src="/javascripts/services/personService.js")
+  body(ng-app="app")
     block content
